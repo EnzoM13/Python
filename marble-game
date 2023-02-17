@@ -1,0 +1,30 @@
+import random
+bag = ("green","green","green","green","green","red","red","red","white","black")
+money=1000
+print ("Welcome to the game")
+print("If you draw Green your bet gets doubled. If you draw Black win 10 times the bet.")
+print ("If you draw Red loose bet. If you draw White loose 5 times the bet.")
+print("Currently you have $1000.")
+print("If you have less than $500 you loose.")
+while money > 500:
+    bet=int(input("How much do you want to bet?: "))
+    choice = random.choice(bag)
+    print(f"You draw the {choice} marble")
+    if choice == "green":
+        money=bet*2+money
+    elif choice == "red":
+        money=money-bet
+    elif choice == "white":
+        money=money-(bet*5)
+    elif choice == "black":
+        money=bet*10+money
+    print("$"+str(money))
+    if money <= 0:
+        print("You lost everything")
+        break
+    retire=input("Do you want to retire? y or n")
+    if retire.lower() == "y":
+        print("Congratulations, you won: $"+str(money))
+        break
+    else:
+        continue
