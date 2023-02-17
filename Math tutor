@@ -1,0 +1,38 @@
+import random
+from time import time as t
+print('Project - Math Tutor')
+try:
+    number_q=input("How many questions do you want?")
+    number_p=int(input("Highest number used in practice?: "))
+except:
+    print("invalid input")
+    
+operand=["*","+","/","+"]
+#print(number1,number2,rand_ope)
+i=0
+points=0
+total_start=t()
+try:
+    while i < int(number_q):
+        start = t()
+        number1=random.randint(1,number_p)
+        number2=random.randint(1,number_p) 
+        rand_ope=random.choice(operand)
+        user_answ=input(f"{str(number1)} {rand_ope} {str(number2)} = ")
+        real_answ=eval((f"{number1} {rand_ope} {number2}"))
+        print(f"Correct asnwer is: {number1} {rand_ope} {number2} = {round(real_answ,1)}")
+        if float(round(real_answ,1))==float(user_answ):
+            points+=1
+        i+=1
+        end=t()
+        print("Your time in this question was",round(end-start,1), "seconds ")
+except:
+    print("invalid input")
+total_end=t()
+try:
+    print("Thanks for playing")
+    print(f"You got {points} points")
+    print(f"You got {int(points)*100/int(number_q)}% correct")
+    print("Your total time was round",round(total_end-total_start,1),"seconds")
+except:
+    print("invalid input")
