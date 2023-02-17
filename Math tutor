@@ -8,7 +8,6 @@ except:
     print("invalid input")
     
 operand=["*","+","/","+"]
-#print(number1,number2,rand_ope)
 i=0
 points=0
 total_start=t()
