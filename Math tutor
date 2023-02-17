@@ -4,14 +4,12 @@ print('Project - Math Tutor')
 try:
     number_q=input("How many questions do you want?")
     number_p=int(input("Highest number used in practice?: "))
-except:
-    print("invalid input")
+
     
-operand=["*","+","/","+"]
-i=0
-points=0
-total_start=t()
-try:
+    operand=["*","+","/","+"]
+    i=0
+    points=0
+    total_start=t()
     while i < int(number_q):
         start = t()
         number1=random.randint(1,number_p)
@@ -25,13 +23,10 @@ try:
         i+=1
         end=t()
         print("Your time in this question was",round(end-start,1), "seconds ")
-except:
-    print("invalid input")
-total_end=t()
-try:
+    total_end=t()
     print("Thanks for playing")
     print(f"You got {points} points")
-    print(f"You got {int(points)*100/int(number_q)}% correct")
-    print("Your total time was round",round(total_end-total_start,1),"seconds")
+    print(f"You got {round(int(points)*100/int(number_q))}% correct")
+    print("Your total time was ",round(total_end-total_start,1),"seconds")
 except:
     print("invalid input")
